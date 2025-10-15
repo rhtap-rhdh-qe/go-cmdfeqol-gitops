@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: go-cmdfeqol-gitops
+  description: This is GitOps manifest for go-cmdfeqol   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=go-cmdfeqol
+    backstage.io/kubernetes-id: go-cmdfeqol 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: go-cmdfeqol
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:go-cmdfeqol

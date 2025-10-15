@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+commonLabels:         
+  argocd/app-name: go-cmdfeqol
+  janus-idp.io/tekton: go-cmdfeqol
+  backstage.io/kubernetes-id: go-cmdfeqol
+  backstage.io/kubernetes-namespace: tssc-app 
+  app.kubernetes.io/part-of: go-cmdfeqol
+resources:
+  - deployment.yaml
+  - route.yaml
+  - service.yaml
